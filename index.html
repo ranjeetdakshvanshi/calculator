@@ -4,10 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transparent Calculator</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+<style>
+    body {
+       background: url(https://i.pinimg.com/originals/31/68/c0/3168c09eeeb529be5b321575fe56b02b.gif); /* Replace background.jpg with your image */
+  background-size:cover;
+    }
+    .calculator {
+        background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha value for transparency */
+        border-radius: 10px;
+        padding: 20px;
+        width: 200px;
+        margin: auto;
+        margin-top: 100px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .calculator:hover{
+         box-shadow: 1px 1px 10px 2px rgb(253, 5, 5);
+
+    }
+    .calculator input[type="button"] {
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .calculator input[type="text"] {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        text-align: right;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+  input:active{
+    box-shadow: 1px 1px 5px blue;
+  }
+</style>
 </head>
 <body>
+
 <div class="calculator">
     <input type="text" id="display" readonly>
     <input type="button" value="1" onclick="addToDisplay('1')">
@@ -23,10 +63,28 @@
     <input type="button" value="0" onclick="addToDisplay('0')">
     <input type="button" value="." onclick="addToDisplay('.')">
     <input type="button" value="/" onclick="addToDisplay('/')">
-    <input type="button" value="*" onclick="addToDisplay('*')">
+     <input type="button" value="*" onclick="addToDisplay('*')">
     <input type="button" value="=" onclick="calculate()">
     <input type="button" value="+" onclick="addToDisplay('+')">
     <input type="button" value="C" onclick="clearDisplay()">
 </div>
+
+<script>
+    function addToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch(error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+</script>
+
 </body>
 </html>
+
