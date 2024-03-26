@@ -1,1 +1,32 @@
-
+body {
+       background: url(public/images/om.jpg); /* Replace background.jpg with your image */
+  background-size:cover;
+    }
+    .calculator {
+        background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha value for transparency */
+        border-radius: 10px;
+        padding: 20px;
+        width: 200px;
+        margin: auto;
+        margin-top: 100px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .calculator input[type="button"] {
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    .calculator input[type="text"] {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        text-align: right;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
